@@ -1,0 +1,12 @@
+{% extends("base.html.twig") %}
+
+{% block main %}
+    {% for single in merchandise %}
+        <div class="jumbotron">
+            <h1>{{ single.name }}</h1>
+            <p>{{ single.image }}</p>
+            <p>{{ single.price }}</p>
+            <a href="#" ><img src="{{ asset("Resources/Images/add-to-cart.png") }}" ></a>
+        </div>
+    {% endfor %}
+{% endblock %}
