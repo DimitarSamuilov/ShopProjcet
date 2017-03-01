@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    {% block title %}<title>Multivac</title>{% endblock %}
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('css/shop-style.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.min.css') }}">
+    {% endblock %}
+</head>
+<body>
+<main>
+    <header>
+        <div class="header-top">
+            <div class="logo">
+                <img src="{{ asset("Resources/Images/logo.png") }}">
+            </div>
+            <div class="cart">
+                <span>0 прод</span>|<span>0,00лв.</span><a href="#"><img src="{{ asset("Resources/Images/cart.png") }}"></a>
+            </div>
+            <div class="search-form">
+                <form>
+                    <input type="text" name="search">
+                    <a href="#" class="search-button">Търси</a>
+                </form>
+            </div>
+        </div>
+        <hr>
+    </header>
+    <div class="content">
+        <p>content</p>
+    </div>
+    <footer>
+    <div class="contact-info">
+            <span>За нас </span>|<span>как да поръчам </span>|<span>Начин на доставка</span>|<span>Условия за ползване</span>|<span>Контакти</span>
+            <p>&copy All rights reserverd</p>
+            <p>Designed bt Ryzn</p>
+    </div>
+    <div class="buletin">
+        <h3>Бюлетин</h3>
+        <form>
+            <input type="text" name="buletin" >
+            <a href="#">
+            <img src="{{ asset('Resources/Images/btn-newsletter.png') }}"> </a>
+        </form>
+    </div>
+    </footer>
+</main>
+{% block javascripts %}
+    <script src="{{ asset('js/jquery-2.2.4.min.js') }}"></script>
+    <script src="{{ asset('js/moment.min.js') }}"></script>
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <script src="{{ asset('js/bootstrap-datetimepicker.min.js') }}"></script>
+{% endblock %}
+</body>
+</html>

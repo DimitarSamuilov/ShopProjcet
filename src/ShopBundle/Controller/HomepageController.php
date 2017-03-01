@@ -18,4 +18,13 @@ class HomepageController extends Controller
     }
 
 
+    /**
+     * @return \Symfony\Component\HttpFoundation\Response
+     * @Route("/homepage")
+     */
+    public function homepageOriginalAction()
+    {
+
+        return $this->render("homepage.html.twig");
+    }
 }
