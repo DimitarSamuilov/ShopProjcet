@@ -18,79 +18,128 @@ time, mark, audio, video {
     font: inherit;
     vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
+
 body {
     line-height: 1;
 }
+
 ol, ul {
     list-style: none;
 }
+
 blockquote, q {
     quotes: none;
 }
+
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content: '';
+
     content: none;
 }
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
 }
+
 * {
     box-sizing: border-box;
 }
-main, body {
+
+.col-1 {
+    width: 8.33%;
+}
+
+.col-2 {
+    width: 16.66%;
+}
+
+.col-3 {
+    width: 25%;
+}
+
+.col-4 {
+    width: 33.33%;
+}
+
+.col-5 {
+    width: 41.66%;
+}
+
+.col-6 {
+    width: 50%;
+}
+
+.col-7 {
+    width: 58.33%;
+}
+
+.col-8 {
+    width: 66.66%;
+}
+
+.col-9 {
+    width: 75%;
+}
+
+.col-10 {
+    width: 83.33%;
+}
+
+.col-11 {
+    width: 91.66%;
+}
+
+.col-12 {
     width: 100%;
-    height: 100%;
-
 }
 
-.content {
-    width: 80%;
-    height: 60%;
-    margin-left: 10%;
-    margin-right: 10%;
-    position: absolute;
-    border-style: solid;
-    border-width: 5px;
-
-}
-
-footer {
-    max-width: 99%;
-    position: absolute;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    height: 20%;
-    border-style: solid;
-    border-width: 5px;
-}
-
-header {
-    max-width: 99%;
-    width: 100%;
-    height: 20%;
-    border-style: solid;
-    border-width: 5px;
-}
-.logo{
+[class*="col-"] {
     float: left;
+    padding: 15px;
+    /*border: 1px solid red;*/
+}
+
+a {
+    text-decoration: none;
+}
+
+.authentication-link {
+    color: #000000;
+}
+
+.navbar-background {
+    background-image: url("../Resources/Images/navigation.jpg");
+    background-size: contain;
+}
+
+.navbar-background:first-child {
+    padding: 0;
+}
+
+.navbar-link {
+    color: #F5FFFD;
+    text-align: center;
+    font-size: 15px;
+    padding: 0 3% 5% 0;
+}
+
+.navbar-list {
 
 }
-.header-top{
-    display: inline-block;
-    width: 100%;
+
+.navbar-list > li {
+    display: inline;
 }
-.contact-info{
-    width:50%;
-    float: left;
+
+.inner-clear-padding {
+    padding: 0;
+    margin: 0;
 }
-.buletin{
-    float: right;
-}
+

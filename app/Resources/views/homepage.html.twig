@@ -10,40 +10,116 @@
 <body>
 <main>
     <header>
-        <div class="header-top">
-            <div class="logo">
+        <div class="row">
+            <div class="col-3">
                 <img src="{{ asset("Resources/Images/logo.png") }}">
             </div>
-            <div class="cart">
+            <div class="col-7"></div>
+            <div class="col-2">
                 <span>0 прод</span>|<span>0,00лв.</span><a href="#"><img src="{{ asset("Resources/Images/cart.png") }}"></a>
-            </div>
-            <div class="search-form">
-                <form>
-                    <input type="text" name="search">
-                    <a href="#" class="search-button">Търси</a>
-                </form>
+                <div class="search-form">
+                    <form>
+                        <input type="text" name="search">
+                        <a href="#" class="search-button">Търси</a>
+                    </form>
+                </div>
             </div>
         </div>
         <hr>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 inner-clear-padding" >
+                <div class="col-5 inner-clear-padding">
+                    <p>Добре дошли в нашият онлайн магазин</p>
+                </div>
+                <div class="col-5">
+                </div>
+                <div class="col-2 inner-clear-padding">
+                    <ul class="navbar-list">
+                        <li><a href="#" class="authentication-link">Регистрация</a>
+                        </li>
+                        <li><a href="#" class="authentication-link">Вход</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-12 navbar-background" style="padding: 0">
+                <div class="col-2"></div>
+                <div class="col-8" style="padding: inherit;">
+                    <div class="col-1" style="padding: 0;"><a href="#"><img
+                                    src="{{ asset("Resources/Images/ico-home.png") }}"></a>
+                    </div>
+                    <div class="col-8">
+                        <ul class="navbar-list">
+                            <li><a href="#" class="navbar-link">промоции</a></li>
+                            <li><a href="#" class="navbar-link">камерни машини</a></li>
+                            <li><a href="#" class="navbar-link">консумативи</a></li>
+                            <li><a href="#" class="navbar-link">компактни термоформи</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-3">
+                        <ul class="navbar-list">
+                            <li><a href="#" class="navbar-link">Сертификати</a></li>
+                            <li><a href="#" class="navbar-link">Контакти</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-2"></div>
+            </div>
+
+        </div>
     </header>
-    <div class="content">
-        <p>content</p>
+    <main>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8"></div>
+            <div class="col-2"></div>
+        </div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8">
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+                <div class="col-3"></div>
+            </div>
+            <div class="col-2"></div>
+        </div>
+    </main>
+    <div class="col-12">
+        <hr>
     </div>
     <footer>
-    <div class="contact-info">
-            <span>За нас </span>|<span>как да поръчам </span>|<span>Начин на доставка</span>|<span>Условия за ползване</span>|<span>Контакти</span>
-            <p>&copy All rights reserverd</p>
-            <p>Designed bt Ryzn</p>
-    </div>
-    <div class="buletin">
-        <h3>Бюлетин</h3>
-        <form>
-            <input type="text" name="buletin" >
-            <a href="#">
-            <img src="{{ asset('Resources/Images/btn-newsletter.png') }}"> </a>
-        </form>
-    </div>
+        <div class=" row">
+            <div class="col-5">
+                <div class="contact-info">
+                    <span>За нас </span>|<span>как да поръчам </span>|<span>Начин на доставка</span>|<span>Условия за ползване</span>|<span>Контакти</span>
+                    <p>&copy All rights reserverd</p>
+                    <p>Designed bt Ryzn</p>
+                </div>
+            </div>
+            <div class="col-4"></div>
+            <div class="col-3">
+                <div class="buletin">
+                    <h3>Бюлетин</h3>
+                    <form>
+                        <input type="text" name="buletin">
+                        <a href="#">
+                            <img src="{{ asset('Resources/Images/btn-newsletter.png') }}"> </a>
+                    </form>
+                </div>
+            </div>
+        </div>
     </footer>
+
 </main>
 {% block javascripts %}
     <script src="{{ asset('js/jquery-2.2.4.min.js') }}"></script>
