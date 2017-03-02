@@ -3,9 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8c0e3234-8e2a-487a-9fe9-38abbc12b320" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/homepage.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/homepage.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ShopBundle/Controller/HomepageController.php" afterPath="$PROJECT_DIR$/src/ShopBundle/Controller/HomepageController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/css/shop-style.css" afterPath="$PROJECT_DIR$/web/css/shop-style.css" />
     </list>
     <ignored path="ShopProject.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -497,7 +494,7 @@
       <workItem from="1488393914468" duration="10015000" />
       <workItem from="1488435892959" duration="2882000" />
       <workItem from="1488438921330" duration="21985000" />
-      <workItem from="1488461314423" duration="2129000" />
+      <workItem from="1488461314423" duration="2136000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1488319986347</created>
@@ -534,11 +531,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488454497769</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="slider">
+      <created>1488463448599</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1488463448599</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="63723000" />
+    <option name="totallyTimeSpent" value="63730000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
