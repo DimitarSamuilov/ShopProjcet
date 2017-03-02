@@ -14,12 +14,6 @@
             <div class="col-2"></div>
             <div class="col-8 inner-clear-padding" style="position: relative;">
                 <img src="{{ asset("Resources/Images/logo.png") }}">
-                {#<div class="col-3 clear">
-                    <img src="{{ asset("Resources/Images/logo.png") }}">
-                </div>
-                <div class="col-6 clear"></div>
-                <div class="col-3 clear">
-                    <div class="row">#}
                 <div class="cart-bar" style="position: absolute;">
                     <span>0 прод</span>|<span>0,00лв.</span>
                     <div class="cart-btn">
@@ -27,8 +21,15 @@
                             <img src="{{ asset("Resources/Images/cart.png") }}"> Кошница </a>
                     </div>
                 </div>
-                {#</div>#}
-
+                <div class="header-search-box">
+                    <div class="search-bar">
+                        <form>
+                            <input class="keyword-field" type="text" name="search"
+                                   placeholder="Търсете навсякъде в нашия сайт">
+                            <button class="search-btn" name="submit">Търси</button>
+                        </form>
+                    </div>
+                </div>
             </div>
         </div>
         <div class="col-2"></div>
@@ -40,10 +41,10 @@
                 <div class="col-5">
                     <p>Добре дошли в нашият онлайн магазин</p>
                 </div>
-                <div class="col-5 ">
+                <div class="col-4 ">
                 </div>
-                <div class="col-2 ">
-                    <ul class="navbar-list ">
+                <div class="col-3 search-bar">
+                    <ul class="navbar-list authentication-bar">
                         <li><a href="#" class="authentication-link">Регистрация</a>
                         </li>
                         <li><a href="#" class="authentication-link">Вход</a>
@@ -82,38 +83,44 @@
     <main>
         <div class="row side-heigh">
             <div class="col-2 slide-side-color"></div>
-            <div class="col-8" style="padding-top:0;">
+            <div class="col-8 " style="padding:0;">
                 <div class="slide-container">
-                    <div class="slide-text">
-                        <h3>Модел Т300</h3><br>
-                        <h1>Лесен за използване</h1><br>
-                        <p> Замъкът е вид сграда
-                            или комплекс от сгради
-                            с укрепителни и отбранителни
-                            функции, строена по време на Средновековието в Европа
-                        </p>
-                    </div>
-                    <div class="slide-buttons">
-                        <a href="#">
-                            <div class="slider-single-button">
-                                <img src="{{ asset("Resources/Images/btn-blue.png") }}">
-                                <span>Виж подробно</span>
-
+                    <div class="single-slide">
+                        <div class="slide-text">
+                            <h3>Модел Т300</h3><br>
+                            <h1>Лесен за използване</h1><br>
+                            <p> Замъкът е вид сграда
+                                или комплекс от сгради
+                                с укрепителни и отбранителни
+                                функции, строена по време на Средновековието в Европа
+                            </p>
+                        </div>
+                        <div class="slide-buttons">
+                            <a href="#">
+                                <div class="slider-single-button">
+                                    <img src="{{ asset("Resources/Images/btn-blue.png") }}">
+                                    <span class="slider-btn-text more-info">Виж подробно</span>
+                                    <img src="{{ asset("Resources/Images/btn-black.png") }}">
+                                    <span class="slider-btn-text buy">Купи</span>
+                                </div>
+                            </a>
+                        </div>
+                        <img src="{{ asset("Resources/Images/home-banner.jpg") }}" style="width: 100%;">
+                        <div>
+                            <div class="dots-nav" style="text-align:center">
+                                <span class="dot"></span>
+                                <span class="dot"></span>
+                                <span class="dot"></span>
                             </div>
-                        </a>{#
-                        <div class="slider-single-button">
-                            <a href="#"><img src="{{ asset("Resources/Images/btn-black.png") }}"></a>
-                            <span>Купи</span>
-                        </div>#}
+                        </div>
                     </div>
-                    <img src="{{ asset("Resources/Images/home-banner.jpg") }}" style="width: 100%;">
                 </div>
             </div>
             <div class="col-2 slide-side-color"></div>
         </div>
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-8 inner-clear-padding">
+            <div class="col-8 side-clear inner-clear-padding">
                 <div class="col-4 clear">
                     <a href="#">
                         <img src="{{ asset("Resources/Images/banner.png") }}"></a></div>
@@ -126,25 +133,38 @@
         </div>
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-8">
+            <div class="col-8 clear-all" style="position: relative;">
+                <span class="products-text">Препоръчани продукти</span>
+                <span class="grey-text">ВСИЧКИ ПРОДУКТИ</span>
+            </div>
+            <div class="col-2"></div>
+        </div>
+        <div class="row">
+            <div class="col-2"></div>
+            <div class="col-8 side-clear">
                 {% for single in merchandise %}
-                    <div class="col-3 merchandise-box">
+                    <div class="col-3 side-clear ">
+                        <div class="merchandise-box">
                     <span>{{ single.name }}
                     </span>
-                        <img src="{{ single.image }}">
-                        <p>&#36;{{ single.price }}<a href="#"><img
-                                        src="{{ asset("Resources/Images/add-to-cart.png") }}"></a></p>
+                            <img class="merchandise-main-image" src="{{ single.image }}">
+                            <p>&#36;{{ single.price }}</p>
+                            <a href="#"><img class="merchandise-cart"
+                                             src="{{ asset("Resources/Images/add-to-cart.png") }}"></a>
+                        </div>
                     </div>
                 {% endfor %}
             </div>
             <div class="col-2"></div>
         </div>
+
     </main>
     <div class="col-12">
         <hr>
     </div>
     <footer>
         <div class=" row">
+            <div class="col-2"></div>
             <div class="col-5">
                 <div class="contact-info">
                     <span>За нас </span>|<span>как да поръчам </span>|<span>Начин на доставка</span>|<span>Условия за ползване</span>|<span>Контакти</span>
@@ -152,17 +172,17 @@
                     <p>Designed bt Ryzn</p>
                 </div>
             </div>
-            <div class="col-4"></div>
+
             <div class="col-3">
                 <div class="buletin">
                     <h3>Бюлетин</h3>
                     <form>
                         <input type="text" name="buletin">
-                        <a href="#">
-                            <img src="{{ asset('Resources/Images/btn-newsletter.png') }}"> </a>
+                        <button name="submit"><img src="{{ asset('Resources/Images/btn-newsletter.png') }}"></button>
                     </form>
                 </div>
             </div>
+            <div class="col-2"></div>
         </div>
     </footer>
 

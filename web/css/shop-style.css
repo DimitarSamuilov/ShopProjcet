@@ -27,7 +27,10 @@ footer, header, hgroup, menu, nav, section {
 
 body {
     line-height: 1;
+    background-color: #e9eef1;
 }
+
+
 
 ol, ul {
     list-style: none;
@@ -51,9 +54,7 @@ table {
 * {
     box-sizing: border-box;
 }
-body{
-    background-color: #e9eef1;
-}
+
 .col-1 {
     width: 8.33%;
 }
@@ -113,12 +114,17 @@ body{
     clear: both;
     display: table;
 }
+
 a {
     text-decoration: none;
 }
-
+.authentication-bar{
+    position: absolute;
+    right: 0px;
+}
 .authentication-link {
     color: #000000;
+    padding:5px;
 }
 
 .navbar-background {
@@ -157,15 +163,17 @@ img {
     max-width: 100%;
     height: auto;
 }
-.cart-bar{
-    top:5%;
-    right:0;
-    padding:3px;
+
+.cart-bar {
+    top: 5%;
+    right: 0;
+    padding: 3px;
     border: 2px solid gray;
     border-radius: 5px;
 
 }
-.cart-btn{
+
+.cart-btn {
     border-radius: 5px;
     float: right;
     display: inline;
@@ -173,66 +181,212 @@ img {
     color: white;
     text-align: center;
 }
-.cart-bar >span{
+
+.cart-bar > span {
     text-align: center;
-    font-weight:bolder;
+    font-weight: bolder;
 }
-.white-line{
+
+.white-line {
     width: 95%;
     background-color: white;
 
 }
-.merchandise-box{
-    border: 1px solid #dfe4e7 ;
-    background-color: #f3f7f8;
-    color: #00508c;
-}
-.slide-side-color{
-    background-color: #e1e9eb;
-}
 
-.slide-container{
+
+.slide-container {
+    max-width: 100%;
     position: relative;
+}
+
+.single-slide {
 
 }
-.slide-header{
+
+.dot {
+    cursor: pointer;
+    height: 13px;
+    width: 13px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.dots-nav {
+    position: absolute;
+    left: 5%;
+    bottom: 10%;
+}
+
+.slide-header {
     float: left;
     position: absolute;
     display: block;
-    left:5%;
+    left: 5%;
     top: 10%;
     z-index: 10000;
 }
-.slide-paragraph{
+
+.slide-paragraph {
     float: left;
     position: absolute;
     display: block;
     left: 5%;
     top: 20%;
 }
-.slide-text{
+
+.slide-text {
     position: absolute;
     float: left;
-    left:5%;
-    top:10%;
+    left: 5%;
+    top: 10%;
     width: 30%;
 }
-.slide-buttons{
+
+.slide-buttons {
     position: absolute;
     float: left;
-    bottom:20%;
-    left:5%;
+    bottom: 20%;
+    left: 5%;
 }
-.slider-single-button{
 
-    color:white;
+.slider-single-button {
+    color: white;
 }
-.slider-single-button>img{
+
+.slider-single-button > img {
     position: relative;
 }
-.slider-single-button>span{
+
+.slider-btn-text {
     position: absolute;
-    left:14%;
-    top:22%;
+    left: 8%;
+    top: 22%;
     font-size: 15px;
+}
+
+.more-info {
+    left: 8%;
+    top: 22%;
+}
+
+.buy {
+    left: 70%
+}
+
+.fade {
+    -webkit-animation-name: fade;
+    -webkit-animation-duration: 1.5s;
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+@keyframes fade {
+    from {
+        opacity: .4
+    }
+    to {
+        opacity: 1
+    }
+}
+
+.header-search-box{
+    position: absolute;
+    right:0;
+}
+.header-search-box>form{
+    width:40%;
+
+}
+.search-bar{
+    position: relative;
+}
+.keyword-field{
+    width:250px;
+    border-radius: 2px;
+    background-color: #e9eef1;
+}
+.search-btn{
+    position: relative;
+    left:-4px;
+    color:white;
+    background-color: #2192de;
+    border:5px solid #2192de;
+    border-radius: 2px;
+}
+.contact-info{
+    color: #8b9999;
+}
+.grey-text{
+    position: absolute;
+    right:0;
+    color: #8b9999;
+    font-size: 10pt;
+}
+.products-text{
+    position: absolute;
+    left:0;
+    color: #005292;
+    font-size:20pt;
+}
+.contact-info>*{
+    padding:5px;
+}
+.side-clear{
+    padding-left:0;
+    padding-right:0;
+}
+
+.merchandise-box {
+    position: relative;
+    border: 1px solid #dfe4e7;
+    background-color: #ffffff;
+    color: #00508c;
+    border-radius: 5px;
+    paddinng:15px 15px 15px 15px;
+    margin: auto;
+    font-size: 10pt;
+    height:220px;
+    overflow: hidden;
+}
+.merchandise-box>span{
+    position: absolute;
+    left:10%;
+    top:5%;
+}
+.merchandise-box>p{
+    position: absolute;
+    left:10%;
+    bottom:10%;
+}
+.merchandise-cart{
+    position: absolute;
+    right:10%;
+    bottom:10%;
+}
+.merchandise-main-image{
+    position: absolute;
+    top: 20%;
+    left:15%;
+}
+.slide-side-color {
+    background-color: #e1e9eb;
+}
+.clear-all{
+    padding:0;
+}
+.botton-line{
+    position: absolute;
+    bottom:0;
 }
