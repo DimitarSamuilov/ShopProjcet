@@ -1,11 +1,11 @@
 {% extends("base.html.twig") %}
 
 {% block main %}
-    {#{% if error %}
+    {% if error %}
         <div class="alert alert-danger">
             {{ error.messageKey }}
         </div>
-    {% endif %}#}
+    {% endif %}
     <div class="container body-content span=8 offset=2">
         <div class="well">
             <form class="form-horizontal" action="{{ path('security_login') }}" method="POST">

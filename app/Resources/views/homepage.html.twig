@@ -12,7 +12,7 @@
     <header>
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-8 inner-clear-padding" style="position: relative;">
+            <div class="col-8 search-bar">
                 <img src="{{ asset("Resources/Images/logo.png") }}">
                 <div class="cart-bar" style="position: absolute;">
                     <span>0 прод</span>|<span>0,00лв.</span>
@@ -37,7 +37,7 @@
         <hr class="white-line">
         <div class="row">
             <div class="col-2"></div>
-            <div class="col-8 inner-clear-padding" style="padding: 0">
+            <div class="col-8 clear-all">
                 <div class="col-5">
                     <p>Добре дошли в нашият онлайн магазин</p>
                 </div>
@@ -45,17 +45,27 @@
                 </div>
                 <div class="col-3 search-bar">
                     <ul class="navbar-list authentication-bar">
-                        <li><a href="#" class="authentication-link">Регистрация</a>
-                        </li>
-                        <li><a href="#" class="authentication-link">Вход</a>
-                        </li>
+                        {% if app.user %}
+                            {% if app.user.isAdmin() %}
+                                <li>
+                                    <a class="authentication-link" href="{{ path('admin_list') }}">Админ страница</a>
+                                </li>
+                            {% endif %}
+                            <li><a href="{{ path("security_logout") }}" class="authentication-link">Изход</a>
+                            </li>
+                        {% else %}
+                            <li><a href="{{ path("security_register") }}" class="authentication-link">Регистрация</a>
+                            </li>
+                            <li><a href="{{ path("security_login") }}" class="authentication-link">Вход</a>
+                            </li>
+                        {% endif %}
                     </ul>
                 </div>
             </div>
             <div class="col-2"></div>
         </div>
         <div class="row">
-            <div class="col-12 navbar-background" style="padding: 0">
+            <div class="col-12 navbar-background clear-all">
                 <div class="col-2"></div>
                 <div class="col-8" style="padding: inherit;">
                     <div class="col-1" style="padding: 0;"><a href="#"><img
@@ -69,11 +79,13 @@
                             <li><a href="#" class="navbar-link">компактни термоформи</a></li>
                         </ul>
                     </div>
-                    <div class="col-3">
-                        <ul class="navbar-list">
-                            <li><a href="#" class="navbar-link">Сертификати</a></li>
-                            <li><a href="#" class="navbar-link">Контакти</a></li>
-                        </ul>
+                    <div class="col-3 side-clear">
+                        <div class="search-bar">
+                            <ul class="navbar-list right-nav">
+                                <li><a href="#" class="navbar-link">Сертификати</a></li>
+                                <li><a href="#" class="navbar-link">Контакти</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
                 <div class="col-2"></div>
@@ -81,9 +93,9 @@
         </div>
     </header>
     <main>
-        <div class="row side-heigh">
-            <div class="col-2 slide-side-color"></div>
-            <div class="col-8 " style="padding:0;">
+        <div class="row match-col">
+            <div class="col-2 slide-side-color "></div>
+            <div class="col-8 clear-all">
                 <div class="slide-container">
                     <div class="single-slide">
                         <div class="slide-text">
@@ -143,7 +155,7 @@
             <div class="col-2"></div>
             <div class="col-8 side-clear">
                 {% for single in merchandise %}
-                    <div class="col-3 side-clear ">
+                    <div class="col-3 side-clear">
                         <div class="merchandise-box">
                     <span>{{ single.name }}
                     </span>
@@ -173,13 +185,16 @@
                 </div>
             </div>
 
-            <div class="col-3">
-                <div class="buletin">
-                    <h3>Бюлетин</h3>
-                    <form>
-                        <input type="text" name="buletin">
-                        <button name="submit"><img src="{{ asset('Resources/Images/btn-newsletter.png') }}"></button>
-                    </form>
+            <div class="col-3 side-clear">
+                <div class="search-bar">
+                    <div class="buletin">
+                        <h3>Бюлетин</h3>
+                        <form>
+                            <input class="bul-field" type="text" name="buletin">
+                            <button name="submit" class="close-icon btn-placer"><img
+                                        src="{{ asset('Resources/Images/btn-newsletter.png') }}"></button>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="col-2"></div>

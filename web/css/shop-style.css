@@ -30,8 +30,6 @@ body {
     background-color: #e9eef1;
 }
 
-
-
 ol, ul {
     list-style: none;
 }
@@ -118,13 +116,15 @@ table {
 a {
     text-decoration: none;
 }
-.authentication-bar{
+
+.authentication-bar {
     position: absolute;
     right: 0px;
 }
+
 .authentication-link {
     color: #000000;
-    padding:5px;
+    padding: 5px;
 }
 
 .navbar-background {
@@ -165,7 +165,7 @@ img {
 }
 
 .cart-bar {
-    top: 5%;
+    top: 10%;
     right: 0;
     padding: 3px;
     border: 2px solid gray;
@@ -193,7 +193,6 @@ img {
 
 }
 
-
 .slide-container {
     max-width: 100%;
     position: relative;
@@ -212,6 +211,9 @@ img {
     border-radius: 50%;
     display: inline-block;
     transition: background-color 0.6s ease;
+}
+.active, .dot:hover {
+    background-color: #717171;
 }
 
 .dots-nav {
@@ -301,51 +303,60 @@ img {
     }
 }
 
-.header-search-box{
+.header-search-box {
     position: absolute;
-    right:0;
+    right: 0;
 }
-.header-search-box>form{
-    width:40%;
+
+.header-search-box > form {
+    width: 40%;
 
 }
-.search-bar{
+
+.search-bar {
     position: relative;
 }
-.keyword-field{
-    width:250px;
+
+.keyword-field {
+    width: 250px;
     border-radius: 2px;
     background-color: #e9eef1;
 }
-.search-btn{
+
+.search-btn {
     position: relative;
-    left:-4px;
-    color:white;
+    left: -4px;
+    color: white;
     background-color: #2192de;
-    border:5px solid #2192de;
+    border: 5px solid #2192de;
     border-radius: 2px;
 }
-.contact-info{
+
+.contact-info {
     color: #8b9999;
 }
-.grey-text{
+
+.grey-text {
     position: absolute;
-    right:0;
+    right: 0;
     color: #8b9999;
     font-size: 10pt;
 }
-.products-text{
+
+.products-text {
     position: absolute;
-    left:0;
+    left: 0;
     color: #005292;
-    font-size:20pt;
+    font-size: 20pt;
 }
-.contact-info>*{
-    padding:5px;
+
+.contact-info > * {
+    padding: 5px;
 }
-.side-clear{
-    padding-left:0;
-    padding-right:0;
+
+.side-clear {
+    padding-left: 0;
+    padding-right: 0;
 }
 
 .merchandise-box {
@@ -354,39 +365,74 @@ img {
     background-color: #ffffff;
     color: #00508c;
     border-radius: 5px;
-    paddinng:15px 15px 15px 15px;
+    padding: 10px 5px 10px 5px;
     margin: auto;
     font-size: 10pt;
-    height:220px;
+    height: 220px;
     overflow: hidden;
 }
-.merchandise-box>span{
+
+.merchandise-box > span {
     position: absolute;
-    left:10%;
-    top:5%;
+    left: 10%;
+    top: 5%;
 }
-.merchandise-box>p{
+
+.merchandise-box > p {
     position: absolute;
-    left:10%;
-    bottom:10%;
+    left: 10%;
+    bottom: 10%;
 }
-.merchandise-cart{
+
+.merchandise-cart {
     position: absolute;
-    right:10%;
-    bottom:10%;
+    right: 10%;
+    bottom: 10%;
 }
-.merchandise-main-image{
+
+.merchandise-main-image {
     position: absolute;
     top: 20%;
-    left:15%;
+    left: 15%;
 }
+
 .slide-side-color {
     background-color: #e1e9eb;
 }
-.clear-all{
-    padding:0;
+
+.clear-all {
+    padding: 0;
 }
-.botton-line{
+
+.botton-line {
     position: absolute;
-    bottom:0;
+    bottom: 0;
+}
+.close-icon {
+    border:1px solid transparent;
+    background-color: transparent;
+    display: inline-block;
+    vertical-align: middle;
+    outline: 0;
+    cursor: pointer;
+}
+.buletin{
+    position: absolute;
+    right:0;
+}
+.bul-field{
+    position: relative;
+    height:27px;
+    border-radius: 4px;
+    left:11px;
+}
+.buletin>h3{
+    position: relative;
+    left:11px;
+}
+.match-col{
+    display: flex;
+}
+.right-nav{
+    right:0;
 }
