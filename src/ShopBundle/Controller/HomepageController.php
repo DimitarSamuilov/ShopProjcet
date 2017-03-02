@@ -10,7 +10,7 @@ class HomepageController extends Controller
 {
     /**
      * @return \Symfony\Component\HttpFoundation\Response
-     * @Route("/homepage",name="homepage")
+     * @Route("/",name="homepage")
      */
     public function homepageOriginalAction()
     {

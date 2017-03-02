@@ -64,10 +64,14 @@ class AdminController extends Controller
         if ($singleMerchandise == null) {
             return $this->redirectToRoute("admin_list");
         }
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($singleMerchandise);
-        $em->flush();
-
+        try {
+            $em = $this->getDoctrine()->getManager();
+            $em->remove($singleMerchandise);
+            $em->flush();
+        }catch (Exception $e){
+            $this->get('session')->getFlashBag()->add('error', $e->getMessage());
+            return $this->redirectToRoute("admin_list");
+        }
         return $this->redirectToRoute("admin_list");
 
     }
