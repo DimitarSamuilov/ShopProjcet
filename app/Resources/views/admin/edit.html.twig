@@ -6,6 +6,8 @@
             {% for error in app.session.flashBag.get('error') %}
                 {{ error }}
             {% endfor %}
+                </div>
+                {% endif  %}
         {{ form_start(form) }}
         {{ form_widget(form) }}
         {{ form_end(form) }}
