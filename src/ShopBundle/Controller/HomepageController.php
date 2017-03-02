@@ -24,7 +24,7 @@ class HomepageController extends Controller
      */
     public function homepageOriginalAction()
     {
-
-        return $this->render("homepage.html.twig");
+        $merchandise=$this->getDoctrine()->getRepository(Merchandise::class)->findBy([],[],8);
+        return $this->render("homepage.html.twig",['merchandise'=>$merchandise]);
     }
 }
