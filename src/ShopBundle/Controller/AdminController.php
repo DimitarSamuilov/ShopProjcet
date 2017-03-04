@@ -3,6 +3,9 @@
 namespace ShopBundle\Controller;
 
 use Doctrine\DBAL\DBALException;
+use Doctrine\DBAL\Exception\ConstraintViolationException;
+use Symfony\Component\Filesystem\Filesystem;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Doctrine\DBAL\Driver\AbstractDriverException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use ShopBundle\Entity\Merchandise;
@@ -11,6 +14,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
 use Symfony\Component\Form\Exception\TransformationFailedException;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\File\File;
+use Symfony\Component\HttpFoundation\RedirectResponse;
 
 /**
  * Class AdminController
@@ -42,20 +47,34 @@ class AdminController extends Controller
         if ($merchandise == null) {
             return $this->redirectToRoute("admin_list");
         }
+        $oldImageSrc=$merchandise->getImage();
+        $tempFile=new File($merchandise->getImage());
+        $merchandise->setImage($tempFile);
+        //$merchandise->setImage(null);
         $form = $this->createForm(MerchandiseFormType::class, $merchandise);
         $form->handleRequest($request);
         if ($form->isSubmitted() and $form->isValid()) {
             try {
+                if ($merchandise->getImage()==null){
+                    $merchandise->setImage($oldImageSrc);
+                }
+                    $file=$merchandise->getImage();
+                    $fileName=$this->moveImage($file);
+                    $merchandise->setImage($fileName);
+
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($merchandise);
                 $em->flush();
             }catch (Exception $exception){
-                $this->get('session')->getFlashBag()->add('error', 'Username or email already taken!');
+                $this->get('session')->getFlashBag()->add('error', "Невалидни данни");
+                return  $this->render("admin/edit.html.twig", ['form' => $form->createView()]);
+            }catch (ConstraintViolationException $exception){
+                $this->get('session')->getFlashBag()->add('error', $exception->getMessage());
                 return  $this->render("admin/edit.html.twig", ['form' => $form->createView()]);
             }
             return $this->redirectToRoute("admin_list");
         }
-        return $this->render("admin/edit.html.twig", ['form' => $form->createView()]);
+        return $this->render("admin/edit.html.twig", ['form' => $form->createView(),'merchandise'=>$merchandise,'image'=>$oldImageSrc]);
     }
 
     /**
@@ -91,6 +110,13 @@ class AdminController extends Controller
         $form->handleRequest($request);
         if ( $form->isSubmitted()and $form->isValid() ) {
             try {
+                if($merchandise->getImage()==null){
+                    $this->get('session')->getFlashBag()->add('error', "Не е дадено изображение");
+                    return $this->render("/admin/add.html.twig", ['form' => $form->createView()]);
+                }
+                $file=$merchandise->getImage();
+                $fileName=$this->moveImage($file);
+                $merchandise->setImage($fileName);
                 $merchandise->setUser($this->getUser());
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($merchandise);
@@ -107,5 +133,13 @@ class AdminController extends Controller
         }
 
         return $this->render("/admin/add.html.twig", ['form' => $form->createView()]);
+    }
+    private function moveImage($file)
+    {
+        $fileName = md5(uniqid()) . '.' . $file->guessExtension();
+        $directory = '..'.DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'Resources'.DIRECTORY_SEPARATOR.'Images';
+        $file->move($directory, $fileName);
+        $result='Resources'.DIRECTORY_SEPARATOR.'Images' . DIRECTORY_SEPARATOR . $fileName;
+        return $result;
     }
 }

@@ -18,11 +18,14 @@
         <div class="navbar navbar-default navbar-static-top" role="navigation">
             <div class="container">
                 <div class="navbar-header">
-                    <a href="{{ path('homepage') }}" class="navbar-brand">Потребителска Страница</a>
+                    <a href="{{ path('homepage') }}" class="navbar-brand">Към Потребителска Страница</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-right">
                         {% if app.user %}
+                            <li>
+                                <a href="{{ path('admin_list') }}"> Към главна админ Страница</a>
+                            </li>
                             <li>
                                 <a href="{{ path('security_logout') }}">
                                     Излез

@@ -39,7 +39,11 @@ class Merchandise
     /**
      * @var mixed
      *
+     * @Assert\Image(
      *
+     *     mimeTypes="image/*"
+     *
+     * )
      *
      * @ORM\Column(name="image", type="string", length=255)
      */
@@ -79,15 +83,13 @@ class Merchandise
      */
     private $dateAdded;
 
-
-
     /**
      * Merchandise constructor.
      */
     public function __construct()
     {
         $this->dateAdded=new \DateTime();
-        $this->setImage('\Resources\Images\product-img.png');
+/*        $this->setImage('\Resources\Images\product-img.png');*/
     }
 
     /**
