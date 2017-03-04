@@ -109,7 +109,6 @@ class AdminController extends Controller
         return $this->redirectToRoute("admin_list");
 
     }
-
     /**
      * @param Request $request
      * @return \Symfony\Component\HttpFoundation\Response
