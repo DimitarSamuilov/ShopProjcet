@@ -52,14 +52,15 @@ class SecurityController extends Controller
             }
             catch ( Exception $exception){
                 $this->get('session')->getFlashBag()->add('error', $exception->getMessage());
+                var_dump($exception);
                 return $this->render('security/register.html.twig',['form'=>$form->createView()]);
             }catch (DBALException $exception){
-                $this->get('session')->getFlashBag()->add('error', "Username already taken!!");
+                $this->get('session')->getFlashBag()->add('error', "Потребителското име е заето");
                 return $this->render('security/register.html.twig',['form'=>$form->createView()]);
-            }
-            return $this->redirectToRoute("homepage");
-        }
 
+            }
+            return $this->render("security/login.html.twig");
+        }
         return $this->render('security/register.html.twig',['form'=>$form->createView()]);
     }
 

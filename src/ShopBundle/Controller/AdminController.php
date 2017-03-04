@@ -30,7 +30,7 @@ class AdminController extends Controller
      */
     public function listMerchandiseAction()
     {
-        $merchandise = $this->getDoctrine()->getRepository(Merchandise::class)->findby([],['dateAdded'=> 'desc']);
+        $merchandise = $this->getDoctrine()->getRepository(Merchandise::class)->findby([], ['dateAdded' => 'desc']);
         return $this->render("admin/list.html.twig", ['merchandise' => $merchandise]);
 
     }
@@ -47,34 +47,46 @@ class AdminController extends Controller
         if ($merchandise == null) {
             return $this->redirectToRoute("admin_list");
         }
-        $oldImageSrc=$merchandise->getImage();
-        $tempFile=new File($merchandise->getImage());
+        $oldImageSrc = $merchandise->getImage();
+        $tempFile = new File($merchandise->getImage());
         $merchandise->setImage($tempFile);
-        //$merchandise->setImage(null);
         $form = $this->createForm(MerchandiseFormType::class, $merchandise);
         $form->handleRequest($request);
         if ($form->isSubmitted() and $form->isValid()) {
+            if ($merchandise->getImage() == null) {
+                $merchandise->setImage($oldImageSrc);
+            } else {
+                $file = $merchandise->getImage();
+                $fileName = $this->moveImage($file);
+                $merchandise->setImage($fileName);
+            }
+            if (empty($merchandise->getName())) {
+                $this->get('session')->getFlashBag()->add('error', "Продукта трябва да има Име");
+                return $this->render(
+                    "admin/edit.html.twig",
+                    ['form' => $form->createView(), 'merchandise' => $merchandise, 'image' => $oldImageSrc]
+                );
+            }
             try {
-                if ($merchandise->getImage()==null){
-                    $merchandise->setImage($oldImageSrc);
-                }
-                    $file=$merchandise->getImage();
-                    $fileName=$this->moveImage($file);
-                    $merchandise->setImage($fileName);
-
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($merchandise);
                 $em->flush();
-            }catch (Exception $exception){
+            } catch (DBALException $exception) {
                 $this->get('session')->getFlashBag()->add('error', "Невалидни данни");
-                return  $this->render("admin/edit.html.twig", ['form' => $form->createView()]);
-            }catch (ConstraintViolationException $exception){
-                $this->get('session')->getFlashBag()->add('error', $exception->getMessage());
-                return  $this->render("admin/edit.html.twig", ['form' => $form->createView()]);
+                return $this->render(
+                    "admin/edit.html.twig",
+                    ['form' => $form->createView(),
+                        'merchandise' => $merchandise,
+                        'image' => $oldImageSrc
+                    ]);
             }
             return $this->redirectToRoute("admin_list");
         }
-        return $this->render("admin/edit.html.twig", ['form' => $form->createView(),'merchandise'=>$merchandise,'image'=>$oldImageSrc]);
+        if($form->getErrors(true,false)->getChildren()) {
+                $this->get('session')->getFlashBag()->add('error', "Невалидана инфорамцаия");
+
+        }
+        return $this->render("admin/edit.html.twig", ['form' => $form->createView(), 'merchandise' => $merchandise, 'image' => $oldImageSrc]);
     }
 
     /**
@@ -90,7 +102,7 @@ class AdminController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->remove($singleMerchandise);
             $em->flush();
-        }catch (Exception $e){
+        } catch (Exception $e) {
             $this->get('session')->getFlashBag()->add('error', $e->getMessage());
             return $this->redirectToRoute("admin_list");
         }
@@ -108,38 +120,37 @@ class AdminController extends Controller
         $merchandise = new Merchandise();
         $form = $this->createForm(MerchandiseFormType::class, $merchandise);
         $form->handleRequest($request);
-        if ( $form->isSubmitted()and $form->isValid() ) {
+        if ($form->isSubmitted() and $form->isValid()) {
             try {
-                if($merchandise->getImage()==null){
+                if ($merchandise->getImage() == null) {
                     $this->get('session')->getFlashBag()->add('error', "Не е дадено изображение");
                     return $this->render("/admin/add.html.twig", ['form' => $form->createView()]);
                 }
-                $file=$merchandise->getImage();
-                $fileName=$this->moveImage($file);
+                $file = $merchandise->getImage();
+                $fileName = $this->moveImage($file);
                 $merchandise->setImage($fileName);
                 $merchandise->setUser($this->getUser());
                 $em = $this->getDoctrine()->getManager();
                 $em->persist($merchandise);
                 $em->flush();
-            }catch (Exception $e){
-                $this->get('session')->getFlashBag()->add('error', $e->getMessage());
-                return $this->render("/admin/add.html.twig", ['form' => $form->createView()]);
-            }catch (DBALException $exception){
-                $this->get('session')->getFlashBag()->add('error', $exception->getMessage());
+            } catch (DBALException $exception) {
+                $this->get('session')->getFlashBag()->add('error', "Невалидна информация");
                 return $this->render("/admin/add.html.twig", ['form' => $form->createView()]);
             }
-
             return $this->redirectToRoute("admin_list");
         }
-
+        if($form->getErrors(true,false)->getChildren()) {
+            $this->get('session')->getFlashBag()->add('error', "Невалидана инфорамцаия");
+        }
         return $this->render("/admin/add.html.twig", ['form' => $form->createView()]);
     }
+
     private function moveImage($file)
     {
         $fileName = md5(uniqid()) . '.' . $file->guessExtension();
-        $directory = '..'.DIRECTORY_SEPARATOR.'web'.DIRECTORY_SEPARATOR.'Resources'.DIRECTORY_SEPARATOR.'Images';
+        $directory = '..' . DIRECTORY_SEPARATOR . 'web' . DIRECTORY_SEPARATOR . 'Resources' . DIRECTORY_SEPARATOR . 'Images';
         $file->move($directory, $fileName);
-        $result='Resources'.DIRECTORY_SEPARATOR.'Images' . DIRECTORY_SEPARATOR . $fileName;
+        $result = 'Resources' . DIRECTORY_SEPARATOR . 'Images' . DIRECTORY_SEPARATOR . $fileName;
         return $result;
     }
 }
