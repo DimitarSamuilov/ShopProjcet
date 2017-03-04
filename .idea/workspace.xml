@@ -25,37 +25,36 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="shop-style.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/web/css/shop-style.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="241" column="7" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="homepage.html.twig" pinned="false" current-in-tab="true">
+      <file leaf-file-name="homepage.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/homepage.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="27">
-              <caret line="93" column="84" selection-start-line="93" selection-start-column="84" selection-end-line="93" selection-end-column="84" />
+            <state relative-caret-position="241">
+              <caret line="28" column="51" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="51" />
               <folding>
-                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#1902#1912#0#Twig" expanded="true" />
-                <element signature="e#2066#2081#0#Twig" expanded="true" />
-                <element signature="e#2245#2262#0#Twig" expanded="true" />
-                <element signature="e#2456#2470#0#Twig" expanded="true" />
+                <element signature="e#2046#2056#0#Twig" expanded="true" />
+                <element signature="e#2210#2225#0#Twig" expanded="true" />
+                <element signature="e#2389#2406#0#Twig" expanded="true" />
+                <element signature="e#2600#2614#0#Twig" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
                 <element signature="n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#11324#11329#1#HTML" expanded="true" />
+                <element signature="e#11468#11473#1#HTML" expanded="true" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="shop-style.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/web/css/shop-style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="343">
+              <caret line="482" column="14" selection-start-line="482" selection-start-column="14" selection-end-line="482" selection-end-column="14" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -113,8 +112,9 @@
         <option value="$PROJECT_DIR$/app/Resources/views/admin/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/main/homepage.html.twig" />
         <option value="$PROJECT_DIR$/web/css/style.css" />
-        <option value="$PROJECT_DIR$/web/css/shop-style.css" />
+        <option value="$PROJECT_DIR$/web/css/font-awesome-4.6.3.min.css" />
         <option value="$PROJECT_DIR$/app/Resources/views/homepage.html.twig" />
+        <option value="$PROJECT_DIR$/web/css/shop-style.css" />
       </list>
     </option>
   </component>
@@ -472,7 +472,7 @@
       <workItem from="1488470675587" duration="693000" />
       <workItem from="1488474452772" duration="41000" />
       <workItem from="1488568514887" duration="78000" />
-      <workItem from="1488621567887" duration="27054000" />
+      <workItem from="1488621567887" duration="29326000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1488319986347</created>
@@ -579,11 +579,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488638735479</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="File upload Completed&#10;">
+      <created>1488649705137</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1488649705137</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="97981000" />
+    <option name="totallyTimeSpent" value="100253000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-140" width="1456" height="916" extended-state="6" />
@@ -640,13 +647,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/ShopBundle/Controller/HomepageController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="27" column="51" selection-start-line="27" selection-start-column="51" selection-end-line="27" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1009,6 +1009,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/font-awesome-4.6.3.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="4" column="228" selection-start-line="4" selection-start-column="228" selection-end-line="4" selection-end-column="228" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/ShopBundle/Controller/HomepageController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="272">
@@ -1019,34 +1027,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/shop-style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="241" column="7" selection-start-line="241" selection-start-column="1" selection-end-line="241" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/homepage.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="27">
-          <caret line="93" column="84" selection-start-line="93" selection-start-column="84" selection-end-line="93" selection-end-column="84" />
+        <state relative-caret-position="241">
+          <caret line="28" column="51" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="51" />
           <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#1902#1912#0#Twig" expanded="true" />
-            <element signature="e#2066#2081#0#Twig" expanded="true" />
-            <element signature="e#2245#2262#0#Twig" expanded="true" />
-            <element signature="e#2456#2470#0#Twig" expanded="true" />
+            <element signature="e#2046#2056#0#Twig" expanded="true" />
+            <element signature="e#2210#2225#0#Twig" expanded="true" />
+            <element signature="e#2389#2406#0#Twig" expanded="true" />
+            <element signature="e#2600#2614#0#Twig" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
             <element signature="n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#11324#11329#1#HTML" expanded="true" />
+            <element signature="e#11468#11473#1#HTML" expanded="true" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/css/shop-style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="343">
+          <caret line="482" column="14" selection-start-line="482" selection-start-column="14" selection-end-line="482" selection-end-column="14" />
+          <folding />
         </state>
       </provider>
     </entry>

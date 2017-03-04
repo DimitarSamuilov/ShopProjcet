@@ -5,6 +5,7 @@
     {% block stylesheets %}
         <link rel="stylesheet" href="{{ asset('css/shop-style.css') }}">
         <link rel="stylesheet" href="{{ asset('css/bootstrap-datetimepicker.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('css/font-awesome-4.6.3.min.css') }}">
     {% endblock %}
 </head>
 <body>
@@ -23,6 +24,7 @@
             <div class="header-search-box">
                 <div class="search-bar">
                     <form>
+                        <span class="fa fa-search"></span>
                         <input class="keyword-field" type="text" name="search"
                                placeholder="Търсете навсякъде в нашия сайт">
                         <button class="search-btn" name="submit">Търси</button>
@@ -254,6 +256,7 @@
                 <div class="buletin">
                     <h3>Бюлетин</h3>
                     <form>
+                        <span class="fa fa-envelope-o"></span>
                         <input class="bul-field" type="text" name="buletin">
                         <button name="submit" class="close-icon btn-placer"><img
                                     src="{{ asset('Resources/Images/btn-newsletter.png') }}"></button>
