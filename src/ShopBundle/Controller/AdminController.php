@@ -2,11 +2,14 @@
 
 namespace ShopBundle\Controller;
 
+use Doctrine\DBAL\DBALException;
+use Doctrine\DBAL\Driver\AbstractDriverException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use ShopBundle\Entity\Merchandise;
 use ShopBundle\Form\MerchandiseFormType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
+use Symfony\Component\Form\Exception\TransformationFailedException;
 use Symfony\Component\HttpFoundation\Request;
 
 /**
@@ -22,7 +25,7 @@ class AdminController extends Controller
      */
     public function listMerchandiseAction()
     {
-        $merchandise = $this->getDoctrine()->getRepository(Merchandise::class)->findAll();
+        $merchandise = $this->getDoctrine()->getRepository(Merchandise::class)->findby([],['dateAdded'=> 'desc']);
         return $this->render("admin/list.html.twig", ['merchandise' => $merchandise]);
 
     }
@@ -93,9 +96,13 @@ class AdminController extends Controller
                 $em->persist($merchandise);
                 $em->flush();
             }catch (Exception $e){
-                $this->get('session')->getFlashBag()->add('error', 'Username or email already taken!');
+                $this->get('session')->getFlashBag()->add('error', $e->getMessage());
+                return $this->render("/admin/add.html.twig", ['form' => $form->createView()]);
+            }catch (DBALException $exception){
+                $this->get('session')->getFlashBag()->add('error', $exception->getMessage());
                 return $this->render("/admin/add.html.twig", ['form' => $form->createView()]);
             }
+
             return $this->redirectToRoute("admin_list");
         }
 

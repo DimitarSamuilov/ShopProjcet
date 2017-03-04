@@ -32,12 +32,13 @@ security:
                 # Secure the login form against CSRF
                 # Reference: http://symfony.com/doc/current/cookbook/security/csrf_in_login_form.html
                 csrf_token_generator: security.csrf.token_manager
-
+                always_use_default_target_path: true
+                default_target_path: admin_list
             logout:
                 # The route name the user can go to in order to logout
                 path: security_logout
                 # The name of the route to redirect to after logging out
-                target: /homepage
+                target: /
 
 
     access_control:

@@ -3,6 +3,7 @@
 namespace ShopBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Merchandise
@@ -24,7 +25,7 @@ class Merchandise
     /**
      * @var string
      *
-     * @ORM\Column(name="name", type="string", length=255, unique=true)
+     * @ORM\Column(name="name", type="string", length=255, unique=false)
      */
     private $name;
 
@@ -36,14 +37,9 @@ class Merchandise
     private $price;
 
     /**
-     * @var string
+     * @var mixed
      *
-     * @ORM\Column(name="description", type="text")
-     */
-    private $description;
-
-    /**
-     * @var string
+     *
      *
      * @ORM\Column(name="image", type="string", length=255)
      */
@@ -71,29 +67,74 @@ class Merchandise
     private $summary;
 
     /**
+     * @var double
+     *
+     * @ORM\Column(name="promo_price", type="float")
+     */
+    private $promoPrice;
+
+    /**
+     * @var \DateTime
+     * @ORM\Column(name="date_added",type="datetime")
+     */
+    private $dateAdded;
+
+
+
+    /**
      * Merchandise constructor.
      */
     public function __construct()
     {
+        $this->dateAdded=new \DateTime();
         $this->setImage('\Resources\Images\product-img.png');
     }
 
+    /**
+     * @return mixed
+     */
+    public function getDateAdded()
+    {
+        return $this->dateAdded;
+    }
+
+    /**
+     * @param mixed $dateAdded
+     */
+    public function setDateAdded($dateAdded)
+    {
+        $this->dateAdded = $dateAdded;
+    }
+
+    public function getFormattedDateAdded()
+    {
+        return $this->getDateAdded()->format('Y-m-d H:i:s');
+    }
     /**
      * @return string
      */
     public function getSummary(): string
     {
-        if($this->summary==null){
+        if ($this->summary == null) {
             $this->setSummary();
         }
         return $this->summary;
     }
 
-
-    public function setSummary()
+    /**
+     * @return float
+     */
+    public function getPromoPrice()
     {
+        return $this->promoPrice;
+    }
 
-        $this->summary = substr($this->getDescription(),0,50)."...";
+    /**
+     * @param float $promoPrice
+     */
+    public function setPromoPrice($promoPrice)
+    {
+        $this->promoPrice = $promoPrice;
     }
 
     /**
@@ -111,7 +152,6 @@ class Merchandise
     {
         $this->category = $category;
     }
-
 
 
     /**
@@ -187,30 +227,6 @@ class Merchandise
     public function getPrice()
     {
         return $this->price;
-    }
-
-    /**
-     * Set description
-     *
-     * @param string $description
-     *
-     * @return Merchandise
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    /**
-     * Get description
-     *
-     * @return string
-     */
-    public function getDescription()
-    {
-        return $this->description;
     }
 
     /**

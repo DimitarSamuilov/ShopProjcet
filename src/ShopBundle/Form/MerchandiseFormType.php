@@ -17,8 +17,8 @@ class MerchandiseFormType extends AbstractType
     {
         $builder
             ->add("name", TextType::class)
-            ->add("description", TextareaType::class)
-            ->add("price", NumberType::class)
+            ->add("price", NumberType::class,['invalid_message'=>'Price must be a number'])
+            ->add('promoPrice',NumberType::class,['invalid_message'=>'Promotion Price must be a number'])
             ->add("submit", SubmitType::class);
 
     }

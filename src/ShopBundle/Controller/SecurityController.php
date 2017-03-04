@@ -2,6 +2,8 @@
 
 namespace ShopBundle\Controller;
 
+use Doctrine\DBAL\DBALException;
+use Doctrine\ORM\ORMException;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use ShopBundle\Entity\Role;
 use ShopBundle\Entity\User;
@@ -49,7 +51,10 @@ class SecurityController extends Controller
                 $em->flush();
             }
             catch ( Exception $exception){
-                $this->get('session')->getFlashBag()->add('error', 'Username or email already taken!');
+                $this->get('session')->getFlashBag()->add('error', $exception->getMessage());
+                return $this->render('security/register.html.twig',['form'=>$form->createView()]);
+            }catch (DBALException $exception){
+                $this->get('session')->getFlashBag()->add('error', "Username already taken!!");
                 return $this->render('security/register.html.twig',['form'=>$form->createView()]);
             }
             return $this->redirectToRoute("homepage");

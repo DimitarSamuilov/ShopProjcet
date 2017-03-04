@@ -8,7 +8,43 @@
             {{ error }}
         {% endfor %}
     {% endif %}
-{{ form_start(form) }}
-{{ form_widget(form) }}
-{{ form_end(form) }}
+    </div>
+    <div class="container body-content span=8 offset=2">
+    <div class="well">
+        <form class="form-horizontal" action="{{ path("security_register") }}" method="POST">
+            <fieldset>
+                <legend>Login</legend>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="user_username">Потребителко име</label>
+                    <div class="col-sm-4 ">
+                        <input type="text" class="form-control" id="user_username" placeholder="Потребителско име"
+                               name="user_form[username]" required="required">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="user_password">Парола</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="user_password"
+                               name="user_form[password][first]"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-4 control-label" for="user_password">Потвърдете паролата</label>
+                    <div class="col-sm-6">
+                        <input type="password" class="form-control" id="user_password"
+                               name="user_form[password][second]"/>
+                    </div>
+                </div>
+                <div>
+                    {{ form_row(form._token) }}
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 col-sm-offset-4">
+                        <button type="submit" class="btn btn-primary">Въведи</button>
+                    </div>
+                </div>
+            </fieldset>
+        </form>
+
+    </div>
 {% endblock %}

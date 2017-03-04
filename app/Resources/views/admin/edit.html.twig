@@ -1,15 +1,53 @@
 {% extends("base.html.twig") %}
 
 {% block main %}
-       {% if app.session.flashBag.has('error') %}
-            <div class="alert alert-danger">
+    {% if app.session.flashBag.has('error') %}
+        <div class="alert alert-danger">
             {% for error in app.session.flashBag.get('error') %}
                 {{ error }}
             {% endfor %}
-                </div>
-                {% endif  %}
-        {{ form_start(form) }}
-        {{ form_widget(form) }}
-        {{ form_end(form) }}
+        </div>
+    {% endif %}
+    {#{{ form_start(form) }}
+    {{ form_widget(form) }}
+    {{ form_end(form) }}#}
+    <div class="container body-content span=8 offset=2">
+        <div class="well">
+            <form class="form-horizontal" action="{{ path("admin_add_item") }}" method="POST">
+                <fieldset>
+                    <legend>Редактиране на продукт</legend>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="user_username">Име</label>
+                        <div class="col-sm-4 ">
+                            <input type="text" class="form-control" id="user_username"
+                                   name="merchandise_form[name]" required="required">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="price">Цена</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="price"
+                                   name="merchandise_form[price]"/>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="col-sm-4 control-label" for="promo">Промоционална цена</label>
+                        <div class="col-sm-6">
+                            <input type="number" class="form-control" id="promo"
+                                   name="merchandise_form[promoPrice]"/>
+                        </div>
+                    </div>
+                    <div>
+                        {{ form_row(form._token) }}
+                    </div>
+                    <div class="form-group">
+                        <div class="col-sm-4 col-sm-offset-4">
+                            <button type="submit" class="btn btn-primary">Въведи</button>
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
+    </div>
 {% endblock %}
 
