@@ -28,20 +28,16 @@
       <file leaf-file-name="homepage.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/homepage.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="241">
-              <caret line="28" column="51" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="51" />
+            <state relative-caret-position="593">
+              <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
               <folding>
-                <element signature="e#2046#2056#0#Twig" expanded="true" />
-                <element signature="e#2210#2225#0#Twig" expanded="true" />
-                <element signature="e#2389#2406#0#Twig" expanded="true" />
-                <element signature="e#2600#2614#0#Twig" expanded="true" />
+                <element signature="e#2116#2126#0#Twig" expanded="true" />
+                <element signature="e#2371#2386#0#Twig" expanded="true" />
+                <element signature="e#2641#2658#0#Twig" expanded="true" />
+                <element signature="e#2943#2957#0#Twig" expanded="true" />
                 <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-                <element signature="e#11468#11473#1#HTML" expanded="true" />
+                <element signature="e#11811#11816#1#HTML" expanded="true" />
                 <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -52,8 +48,8 @@
       <file leaf-file-name="shop-style.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/web/css/shop-style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="482" column="14" selection-start-line="482" selection-start-column="14" selection-end-line="482" selection-end-column="14" />
+            <state relative-caret-position="639">
+              <caret line="524" column="0" selection-start-line="524" selection-start-column="0" selection-end-line="524" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -472,7 +468,7 @@
       <workItem from="1488470675587" duration="693000" />
       <workItem from="1488474452772" duration="41000" />
       <workItem from="1488568514887" duration="78000" />
-      <workItem from="1488621567887" duration="29326000" />
+      <workItem from="1488621567887" duration="29985000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1488319986347</created>
@@ -586,11 +582,18 @@
       <option name="project" value="LOCAL" />
       <updated>1488649705137</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="Corrections completed&#10;">
+      <created>1488651987257</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1488651987257</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="100253000" />
+    <option name="totallyTimeSpent" value="100912000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1358" y="-140" width="1456" height="916" extended-state="6" />
@@ -640,7 +643,8 @@
     <MESSAGE value="+" />
     <MESSAGE value="Backend Improvements ---&#10;New Image Upload to follow&#10;" />
     <MESSAGE value="File upload Completed&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="File upload Completed&#10;" />
+    <MESSAGE value="Corrections completed&#10;" />
+    <option name="LAST_COMMIT_MESSAGE" value="Corrections completed&#10;" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -1029,20 +1033,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/homepage.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="241">
-          <caret line="28" column="51" selection-start-line="28" selection-start-column="44" selection-end-line="28" selection-end-column="51" />
+        <state relative-caret-position="593">
+          <caret line="63" column="65" selection-start-line="63" selection-start-column="65" selection-end-line="63" selection-end-column="65" />
           <folding>
-            <element signature="e#2046#2056#0#Twig" expanded="true" />
-            <element signature="e#2210#2225#0#Twig" expanded="true" />
-            <element signature="e#2389#2406#0#Twig" expanded="true" />
-            <element signature="e#2600#2614#0#Twig" expanded="true" />
+            <element signature="e#2116#2126#0#Twig" expanded="true" />
+            <element signature="e#2371#2386#0#Twig" expanded="true" />
+            <element signature="e#2641#2658#0#Twig" expanded="true" />
+            <element signature="e#2943#2957#0#Twig" expanded="true" />
             <element signature="n#style#0;n#div#1;n#div#1;n#div#0;n#div#3;n#header#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#div#2;n#main#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#div#3;n#main#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="e#11468#11473#1#HTML" expanded="true" />
+            <element signature="e#11811#11816#1#HTML" expanded="true" />
             <element signature="n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
@@ -1051,8 +1051,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/web/css/shop-style.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="482" column="14" selection-start-line="482" selection-start-column="14" selection-end-line="482" selection-end-column="14" />
+        <state relative-caret-position="639">
+          <caret line="524" column="0" selection-start-line="524" selection-start-column="0" selection-end-line="524" selection-end-column="0" />
           <folding />
         </state>
       </provider>

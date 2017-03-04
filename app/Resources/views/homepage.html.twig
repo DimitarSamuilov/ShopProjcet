@@ -46,16 +46,23 @@
                 {% if app.user %}
                     {% if app.user.isAdmin() %}
                         <li class="nav-right-child">
+                            <span class="fa-chevron-right fa"></span>
                             <a class="authentication-link" href="{{ path('admin_list') }}">Админ страница</a>
                         </li>
                     {% endif %}
-                    <li class="nav-right-child"><a href="{{ path("security_logout") }}" class="authentication-link">Изход</a>
+                    <li class="nav-right-child">
+                        <span class="fa-chevron-right fa"></span>
+                        <a href="{{ path("security_logout") }}" class="authentication-link">Изход</a>
                     </li>
                 {% else %}
-                    <li class="nav-right-child"><a href="{{ path("security_register") }}"
+                    <li class="nav-right-child">
+                        <span class="fa-chevron-right fa"></span>
+                        <a href="{{ path("security_register") }}"
                                                    class="authentication-link">Регистрация</a>
                     </li>
-                    <li class="nav-right-child"><a href="{{ path("security_login") }}"
+                    <li class="nav-right-child">
+                        <span class="fa-chevron-right fa"></span>
+                        <a href="{{ path("security_login") }}"
                                                    class="authentication-link">Вход</a>
                     </li>
                 {% endif %}
@@ -246,7 +253,7 @@
         <div class="col-2"></div>
         <div class="col-5 clear-all">
             <div class="contact-info clear-all">
-                <span>За нас </span>|<span>как да поръчам </span>|<span>Начин на доставка</span>|<span>Условия за ползване</span>|<span>Контакти</span>
+                <a href="#"><span>За нас </span></a>|<a href="#"><span>Как да поръчам </span></a>|<a href="#"><span>Начин на доставка</span></a>|<a href="#"><span>Условия за ползване</span></a>|<a href="#"><span>Контакти</span></a>
                 <p>&copy All rights reserverd</p>
                 <p>Designed by RIZN</p>
             </div>
