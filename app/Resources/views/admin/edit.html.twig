@@ -3,11 +3,11 @@
 {% block main %}
     {% if app.session.flashBag.has('error') %}
         <div class="alert alert-danger">
-            {% for error in app.session.flashBag.get('error') %}
-                {{ error }}
-            {% endfor %}
-        </div>
+        {% for error in app.session.flashBag.get('error') %}
+            {{ error }}
+        {% endfor %}
     {% endif %}
+    </div>
     {#{{ form_start(form) }}
     {{ form_widget(form) }}
     {{ form_end(form) }}#}

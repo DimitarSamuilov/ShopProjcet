@@ -52,7 +52,12 @@ table {
 * {
     box-sizing: border-box;
 }
+body{
 
+    font-family:"Arial";
+    /*min-width: 990px;*/
+    width: 990px;
+}
 .col-1 {
     width: 8.33%;
 }
