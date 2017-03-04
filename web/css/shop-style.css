@@ -521,3 +521,11 @@ img {
     text-decoration: none;
     color: #8b9999;
 }
+.space{
+    margin: 6px;
+}
+.cart-txt{
+    position: relative;
+    top:-3px;
+    right:4px;
+}
