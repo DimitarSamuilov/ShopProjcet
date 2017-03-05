@@ -30,6 +30,7 @@ body {
     background-color: #e9eef1;
     font-family:Arial, "Lato", "Helvetica Neue", Helvetica,  sans-serif;
     min-width: 990px;
+    width:990px;
 }
 
 ol, ul {
@@ -148,7 +149,7 @@ a {
     color: #F5FFFD;
     text-align: center;
     font-size: 7pt;
-    padding: 0 3% 5% 0;
+    margi: 0 3% 5% 0;
     text-align: center;
     text-transform: uppercase;
 }

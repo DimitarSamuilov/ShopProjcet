@@ -94,4 +94,18 @@ class SecurityController extends Controller
     {
         throw new \Exception('This should never be reached!');
     }
+
+    /**
+     * @return \Symfony\Component\HttpFoundation\RedirectResponse
+     * @Route("/redirect",name="user_redirect")
+     */
+    public function userRedirectAction()
+    {
+        if($this->getUser()->isAdmin()){
+            return $this->redirectToRoute("admin_list");
+        }
+        else {
+            return $this->redirectToRoute("homepage");
+        }
+    }
 }
