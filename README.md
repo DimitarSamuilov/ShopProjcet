@@ -1,6 +1,6 @@
 .checkout
 =========
-RIZN
+
 
 HTML + CSS + WEB
  
